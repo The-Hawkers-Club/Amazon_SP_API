@@ -1,0 +1,5 @@
+# macOS
+.DS_Store
+
+# Internal THC planning notes — keep OUT of the public docs repo
+_THC-*.md
