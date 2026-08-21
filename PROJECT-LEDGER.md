@@ -41,4 +41,4 @@ Work this repo has filed into ANOTHER repo's ledger. `SENT` means the instructio
 
 | ID | To | Ask | Status | Instruction | Answer | Sent | Answered |
 |----|----|-----|--------|-------------|--------|------|----------|
-| XR-OUT-001 | AMZN API/Amazon_Ads_API | Amazon_Ads_API is PRIVATE, not public — README:16 / START-HERE:26 are wrong, and this closes the UNVERIFIED visibility BLOCKER in your SPEC-doc-archive-truth | `SENT` | `XREPO/requests/REQUEST-amzn-api-amazon-sp-api-XR-IN-1000013-amazon-ads-api-is-private-not-public-readme-16-s.md` (in AMZN API/Amazon_Ads_API) | — | 2026-08-21 | — |
+| XR-OUT-001 | AMZN API/Amazon_Ads_API | Amazon_Ads_API is PRIVATE, not public — README:16 / START-HERE:26 are wrong, and this closes the UNVERIFIED visibility BLOCKER in your SPEC-doc-archive-truth | `AWAITING AN ANSWER` | `XREPO/requests/REQUEST-amzn-api-amazon-sp-api-XR-IN-1000013-amazon-ads-api-is-private-not-public-readme-16-s.md` (in AMZN API/Amazon_Ads_API) | — | 2026-08-21 | — · 🔁 balance 2026-08-21: was `SENT`, restamped `AWAITING AN ANSWER` — the recipient holds this open and has not answered; your side must not read as closed. |
