@@ -3,3 +3,7 @@
 
 # Internal THC planning notes — keep OUT of the public docs repo
 _THC-*.md
+
+# Derived PDF text sidecars belong in the container's .claude/spapi-index/, never in this repo
+.claude/spapi-index/
+spapi-index/

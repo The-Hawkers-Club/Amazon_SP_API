@@ -29,7 +29,7 @@ reason — nothing is silently lost.
 
 | Item | Wk | Description | Type | Status | Opened | Updated |
 |------|----|-------------|------|--------|--------|---------|
-| OI-0001 | W0 | ⚪ **10 open build task(s) are written down in `PLAN/specs/SPEC-spapi-archive-readable-and-guarded.md` and tracked by no row.** Verdict `ITEMS-ONLY` (0/10 ticked — a ticked box is a claim, not evidence). Backfilled so the work is VISIBLE; it is not scheduled and not adopted. Next action: `python3 ~/.claude/tools/spec-inventory.py --repo "AMZN API/Amazon_SP_API"` to read the open tasks, then file it into a project or adopt the spec on the open-ledger page. | ⚪ | `OPEN` | 2026-08-21 | 2026-08-21 |
+| OI-0001 | W0 | ⚪ **All 10 build steps in `PLAN/specs/SPEC-spapi-archive-readable-and-guarded.md` are built.** `.claude/spapi-index/` holds a manifest row + text sidecar for all 422 PDFs; `docs/05-archive-index.md` and `docs/06-coverage-report.md` are generated (coverage's family-match window fixed to avoid Amazon's shared site-nav boilerplate false-positiving every family — see spec Items); the citation guard resolves 56 exact + 12 suffix + 2 glob, 0 dangling; `spapi_doc_guard.py`'s 13 unit tests and 10 named mutants are green (control GREEN, every mutant reddens exactly its predicted test); the hourly `com.thc.amzn-api-doc-citations` LaunchAgent is loaded and confirmed CLEAN end-to-end; `START-HERE.md`/`docs/01-04`/`README.md` describe this repo's actual (public) visibility. DoD block run verbatim from the spec: `bash /tmp/spapi-dod.sh > /tmp/spapi-dod.log 2>&1; echo "EXIT=$?" >> /tmp/spapi-dod.log` → **EXIT=0**. | ⚪ | `DONE` | 2026-08-21 | 2026-08-22 |
 
 ## Requests this repo has sent — XREPO OUTBOX
 

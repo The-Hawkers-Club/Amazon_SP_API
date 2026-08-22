@@ -1,7 +1,7 @@
 # SPEC-spapi-archive-readable-and-guarded — the 422-PDF archive becomes machine-readable, coverage-mapped and citation-guarded, and the repo stops describing itself falsely
 
 **Source:** PLAN/dumps/202608210128-estate-intake-onboarding.md
-**Status:** DRAFT            <!-- DRAFT -> QUESTIONS-OUT -> READY -> ADOPTED -->
+**Status:** READY            <!-- DRAFT -> QUESTIONS-OUT -> READY -> ADOPTED -->
 **As of:** 2026-08-21
 
 ## Goal
