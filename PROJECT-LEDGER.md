@@ -64,4 +64,4 @@ Another repo has filed work here. These are **buildable rows, not questions** â€
 
 | Seq | Item | Status | Note |
 |---|---|---|---|
-| 1 | `XR-IN-1000014` | BUILDING | queued by `xrepo-queue.py` 2026-08-21 â€” incoming from estatehub; the instruction file is the spec |
+| 1 | `XR-IN-1000014` | DONE | all 3 findings cleared (`0cab878`), answer delivered to estatehub as `XR-OUT-416` (`7ddbf32`) |
