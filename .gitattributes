@@ -1,0 +1,4 @@
+
+# One row per line: keep BOTH sides of a conflicting hunk rather than letting a
+# strategy-option merge resolve the whole register wholesale (INV-LEDGER-005).
+PROJECT-LEDGER.md merge=union
