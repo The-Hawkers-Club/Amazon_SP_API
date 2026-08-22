@@ -43,7 +43,7 @@ Work this repo has filed into ANOTHER repo's ledger. `SENT` means the instructio
 | ID | To | Ask | Status | Instruction | Answer | Sent | Answered |
 |----|----|-----|--------|-------------|--------|------|----------|
 | XR-OUT-001 | AMZN API/Amazon_Ads_API | Amazon_Ads_API is PRIVATE, not public — README:16 / START-HERE:26 are wrong, and this closes the UNVERIFIED visibility BLOCKER in your SPEC-doc-archive-truth | `DONE` | `XREPO/requests/REQUEST-amzn-api-amazon-sp-api-XR-IN-1000013-amazon-ads-api-is-private-not-public-readme-16-s.md` (in AMZN API/Amazon_Ads_API) | `XREPO/answers/ANSWER-amzn-api-amazon-ads-api-XR-IN-1000013-amazon-ads-api-is-private-not-public-readme-16-s.md` | 2026-08-21 | 2026-08-21 |
-| XR-OUT-417 | AMZN API/amzn-api-integration | Push Amazon_SP_API doc surface to origin | `AWAITING AN ANSWER` | `XREPO/requests/REQUEST-amzn-api-amazon-sp-api-XR-IN-1000067-push-amazon-sp-api-doc-surface-to-origin.md` (in AMZN API/amzn-api-integration) | — | 2026-08-22 | — · 🔁 balance 2026-08-22: was `SENT`, restamped `AWAITING AN ANSWER` — the recipient holds this open and has not answered; your side must not read as closed. |
+| XR-OUT-417 | AMZN API/amzn-api-integration | Push Amazon_SP_API doc surface to origin | `DONE` | `XREPO/requests/REQUEST-amzn-api-amazon-sp-api-XR-IN-1000067-push-amazon-sp-api-doc-surface-to-origin.md` (in AMZN API/amzn-api-integration) | `XREPO/answers/ANSWER-amzn-api-amzn-api-integration-XR-IN-1000067-push-amazon-sp-api-doc-surface-to-origin.md` | 2026-08-22 | 2026-08-22 |
 
 ## Incoming requests from other repos — XREPO INBOX
 
@@ -66,3 +66,19 @@ Another repo has filed work here. These are **buildable rows, not questions** �
 | Seq | Item | Status | Note |
 |---|---|---|---|
 | 1 | `XR-IN-1000014` | DONE | all 3 findings cleared (`0cab878`), answer delivered to estatehub as `XR-OUT-416` (`7ddbf32`) |
+
+## Overnight runs
+
+### Run of 2026-08-21 23:01 — ORDER-COMPLETE
+
+- **Cycles:** 2 · **verdict:** `ORDER-COMPLETE`
+- **Order now:** `XR-IN-1000014`=DONE
+- **Still buildable:** none — order exhausted
+- **Awaited job(s):** none
+
+| # | moved | commits | note |
+|---|-------|---------|------|
+| 1 | HEAD 1758ba31ec1b->6ef1e268da89, XR-IN-1000014 QUEUED->DONE | 3 |  |
+| 2 | HEAD 6ef1e268da89->9a87b082621c | 2 |  |
+
+> Written by `overnight-run.py`. Progress is measured against OBSERVABLES between cycles — the git HEAD, the order's item statuses, the ledger — never against a cycle's own account of itself, because activity is not progress.

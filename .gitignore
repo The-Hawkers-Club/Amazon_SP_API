@@ -7,3 +7,18 @@ _THC-*.md
 # Derived PDF text sidecars belong in the container's .claude/spapi-index/, never in this repo
 .claude/spapi-index/
 spapi-index/
+
+# --- estate git-hygiene block (added 2026-08-22, estate-wide uncommitted-changes audit) ---
+# WHY: .claude/state/ held live client advertising data (Sales/ROAS/Spend) in a repo with a
+# public-facing remote; .claude/worktrees/ are LIVE git worktrees whose commit would record
+# broken mode-160000 gitlinks with no .gitmodules. Both were tracked in ZERO repos, so this
+# block is purely additive. The *.bak-* form is required: git globs are end-anchored, so the
+# common `*.bak` never matches `PROJECT-LEDGER.md.bak-xq`.
+.claude/state/
+.claude/worktrees/
+.claude/scratch/
+.claude/settings.local.json
+*.bak-*
+*.idlock
+.preview/
+# --- end estate git-hygiene block ---
