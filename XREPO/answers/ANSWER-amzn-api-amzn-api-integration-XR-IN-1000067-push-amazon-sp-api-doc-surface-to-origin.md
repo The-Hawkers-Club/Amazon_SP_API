@@ -159,6 +159,15 @@ which already owns this file's guarding, and I am not going to open a second fro
   DEC-0146(a).
 - `XR-IN-1000067` is answered here, which lands the answer row on `Amazon_SP_API`'s ledger.
 
+  **And the delivery of this very document proved section 3 on the way out.** The relay
+  committed it into your tree as `39c3f80` on `main` and then refused to push it:
+  *"NOT PUSHED — this branch is ahead of origin/main by 9 commit(s) that are NOT ours … a push
+  takes the whole branch"*, followed by *"🔴 THE ANSWER DID NOT LAND on origin/HEAD … do not
+  report this as delivered."* So I am not reporting it as delivered. **This answer is readable
+  by any session in your checkout and by no reader of your published repo** — which is the same
+  dead end the request itself hit, reached from the other direction. The nine commits block the
+  answer about the nine commits. Both clear on one act, and it is his.
+
 ## 8. What the sender should do
 
 Nothing further to file at me — re-filing this to another repo would repeat the same
