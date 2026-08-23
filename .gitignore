@@ -31,3 +31,6 @@ spapi-index/
 *.idlock
 .preview/
 # --- end estate git-hygiene block ---
+scratchpad/
+*.pid
+*.pre-*
