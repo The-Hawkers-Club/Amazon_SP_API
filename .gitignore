@@ -14,10 +14,19 @@ spapi-index/
 # broken mode-160000 gitlinks with no .gitmodules. Both were tracked in ZERO repos, so this
 # block is purely additive. The *.bak-* form is required: git globs are end-anchored, so the
 # common `*.bak` never matches `PROJECT-LEDGER.md.bak-xq`.
+# A pattern containing a mid-string slash is ANCHORED to this .gitignore's directory, so
+# `.claude/state/` matched ONLY the repo-root copy. Measured 2026-08-22: 61 dirty entries were
+# nested `.claude/` dirs (specs/.claude/, slate-server-code/.claude/) created by tools resolving
+# `.claude/state` against CWD instead of the repo root. `**/` matches at any depth.
 .claude/state/
 .claude/worktrees/
 .claude/scratch/
 .claude/settings.local.json
+**/.claude/state/
+**/.claude/worktrees/
+**/.claude/scratch/
+**/.claude/settings.local.json
+*.pre-*-[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]
 *.bak-*
 *.idlock
 .preview/
