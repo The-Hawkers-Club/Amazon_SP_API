@@ -13,7 +13,7 @@
 
 | ID | Project | Status | WS | 👤 | 🤖 | 🔗 | ⚪ | Open total | Oldest open | Last touched |
 |----|---------|--------|----|----|----|----|----|-----------|-------------|--------------|
-| PRJ-000 | Unfiled | STANDING | W0 | 0 | 0 | 0 | 1 | 1 | 2026-08-21 | 2026-08-21 |
+| PRJ-000 | Unfiled | STANDING | W0 | 0 | 0 | 0 | 0 | 0 | 2026-08-21 | 2026-08-21 |
 
 **Reconciliation:** Σ project open totals = 1 · non-terminal rows in typed tables = 1 ✅
 
