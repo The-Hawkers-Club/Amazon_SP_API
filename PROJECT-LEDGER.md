@@ -65,8 +65,14 @@ Another repo has filed work here. These are **buildable rows, not questions** �
 
 | Seq | Item | Status | Note |
 |---|---|---|---|
-| 1 | `XR-IN-1000014` | DONE | all 3 findings cleared (`0cab878`), answer delivered to estatehub as `XR-OUT-416` (`7ddbf32`) |
 
+## Build order — COMPLETED (archive)
+
+Items that finished more than 24h ago, moved out of the live order by `order-archive.py` so it shows only what is still to do. Nothing is deleted.
+
+| Seq | Item | Status | Note |
+|---|---|---|---|
+| 1 | `XR-IN-1000014` | DONE | all 3 findings cleared (`0cab878`), answer delivered to estatehub as `XR-OUT-416` (`7ddbf32`) |
 ## Overnight runs
 
 ### Run of 2026-08-21 23:01 — ORDER-COMPLETE
