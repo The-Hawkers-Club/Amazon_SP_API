@@ -65,7 +65,8 @@ Another repo has filed work here. These are **buildable rows, not questions** �
 
 | Seq | Item | Status | Note |
 |---|---|---|---|
-
+| 1 | `XR-ANS-001` | QUEUED | queued by `xrepo-queue.py` 2026-09-02 — answer to `XR-OUT-001` arrived from AMZN API/Amazon_Ads_API; read `XREPO/answers/ANSWER-amzn-api-amazon-ads-api-XR-IN-1000013-amazon-ads-api-is-private-not-public-readme-16-s.md` and act on it |
+| 2 | `XR-ANS-417` | QUEUED | queued by `xrepo-queue.py` 2026-09-02 — answer to `XR-OUT-417` arrived from AMZN API/amzn-api-integration; read `XREPO/answers/ANSWER-amzn-api-amzn-api-integration-XR-IN-1000067-push-amazon-sp-api-doc-surface-to-origin.md` and act on it |
 ## Build order — COMPLETED (archive)
 
 Items that finished more than 24h ago, moved out of the live order by `order-archive.py` so it shows only what is still to do. Nothing is deleted.
