@@ -8,6 +8,7 @@
 **Installed:** 2026-08-21 (oil-install.py)
 **Last reconciled:** never — the first /wrap performs the first reconcile
 **Next IDs:** PRJ-001 · OI-0012 · XA-001
+**Next XR-OUT ID:** 0419
 
 ## Portfolio
 
@@ -45,6 +46,7 @@ Work this repo has filed into ANOTHER repo's ledger. `SENT` means the instructio
 |----|----|-----|--------|-------------|--------|------|----------|
 | XR-OUT-001 | AMZN API/Amazon_Ads_API | Amazon_Ads_API is PRIVATE, not public — README:16 / START-HERE:26 are wrong, and this closes the UNVERIFIED visibility BLOCKER in your SPEC-doc-archive-truth | `DONE` | `XREPO/requests/REQUEST-amzn-api-amazon-sp-api-XR-IN-1000013-amazon-ads-api-is-private-not-public-readme-16-s.md` (in AMZN API/Amazon_Ads_API) | `XREPO/answers/ANSWER-amzn-api-amazon-ads-api-XR-IN-1000013-amazon-ads-api-is-private-not-public-readme-16-s.md` | 2026-08-21 | 2026-08-21 |
 | XR-OUT-417 | AMZN API/amzn-api-integration | Push Amazon_SP_API doc surface to origin | `DONE` | `XREPO/requests/REQUEST-amzn-api-amazon-sp-api-XR-IN-1000067-push-amazon-sp-api-doc-surface-to-origin.md` (in AMZN API/amzn-api-integration) | `XREPO/answers/ANSWER-amzn-api-amzn-api-integration-XR-IN-1000067-push-amazon-sp-api-doc-surface-to-origin.md` | 2026-08-22 | 2026-08-22 |
+| XR-OUT-418 | .claude | xrepo-queue.py mints XR-ANS-nnn order ids that name no row — 1,371 unreachable build-order items in 30 repos | `SENT` | `XREPO/requests/REQUEST-amzn-api-amazon-sp-api-XR-IN-1000843-xrepo-queue-py-mints-xr-ans-nnn-order-ids-that-n.md` (in .claude) | — | 2026-09-06 | — |
 
 ## Incoming requests from other repos — XREPO INBOX
 
