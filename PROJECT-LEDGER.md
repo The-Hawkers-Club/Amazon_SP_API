@@ -7,14 +7,14 @@
 **Page:** https://oil-web-production.up.railway.app/r/Amazon_SP_API
 **Installed:** 2026-08-21 (oil-install.py)
 **Last reconciled:** never — the first /wrap performs the first reconcile
-**Next IDs:** PRJ-001 · OI-0013 · XA-001
+**Next IDs:** PRJ-001 · OI-0019 · XA-001
 **Next XR-OUT ID:** 0419
 
 ## Portfolio
 
 | ID | Project | Status | WS | 👤 | 🤖 | 🔗 | ⚪ | Open total | Oldest open | Last touched |
 |----|---------|--------|----|----|----|----|----|-----------|-------------|--------------|
-| PRJ-000 | Unfiled | STANDING | W0 | 0 | 0 | 0 | 1 | 1 | 2026-08-21 | 2026-09-05 |
+| PRJ-000 | Unfiled | STANDING | W0 | 0 | 0 | 0 | 3 | 3 | 2026-08-21 | 2026-09-06 |
 | PRJ-001 | SPEC-spapi-archive-readable-and-guarded — the 422-PDF archiv | ACTIVE |  | 0 | 10 | 0 | 0 | 10 | 2026-09-05 | 2026-09-05 |
 
 **Reconciliation:** Σ project open totals = 1 · non-terminal rows in typed tables = 1 ✅
@@ -33,6 +33,8 @@ reason — nothing is silently lost.
 |------|----|-------------|------|--------|--------|---------|
 | OI-0001 | W0 | ⚪ **All 10 build steps in `PLAN/specs/SPEC-spapi-archive-readable-and-guarded.md` are built.** `.claude/spapi-index/` holds a manifest row + text sidecar for all 422 PDFs; `docs/05-archive-index.md` and `docs/06-coverage-report.md` are generated (coverage's family-match window fixed to avoid Amazon's shared site-nav boilerplate false-positiving every family — see spec Items); the citation guard resolves 56 exact + 12 suffix + 2 glob, 0 dangling; `spapi_doc_guard.py`'s 13 unit tests and 10 named mutants are green (control GREEN, every mutant reddens exactly its predicted test); the hourly `com.thc.amzn-api-doc-citations` LaunchAgent is loaded and confirmed CLEAN end-to-end; `START-HERE.md`/`docs/01-04`/`README.md` describe this repo's actual (public) visibility. DoD block run verbatim from the spec: `bash /tmp/spapi-dod.sh > /tmp/spapi-dod.log 2>&1; echo "EXIT=$?" >> /tmp/spapi-dod.log` → **EXIT=0**. | ⚪ | `DONE` | 2026-08-21 | 2026-08-22 |
 | OI-0012 | W0 | 🤖 **Read the answer to `XR-OUT-418`** from .claude — `XREPO/answers/ANSWER-claude-XR-IN-1000843-xrepo-queue-py-mints-xr-ans-nnn-order-ids-that-n.md` — and act on it. Raised by `xrepo-queue.py` because the answer arrived with no build-order item naming a real row (XR-IN-1000843). | 🤖 | `OPEN` | 2026-09-05 | 2026-09-05 |
+| OI-0015 | W0 | 🤖 **Read the answer to `XR-OUT-001`** from AMZN API/Amazon_Ads_API — `XREPO/answers/ANSWER-amzn-api-amazon-ads-api-XR-IN-1000013-amazon-ads-api-is-private-not-public-readme-16-s.md` — and act on it. Raised by `xrepo-queue.py` because the answer arrived with no build-order item naming a real row (XR-IN-1000843). | 🤖 | `OPEN` | 2026-09-06 | 2026-09-06 |
+| OI-0018 | W0 | 🤖 **Read the answer to `XR-OUT-417`** from AMZN API/amzn-api-integration — `XREPO/answers/ANSWER-amzn-api-amzn-api-integration-XR-IN-1000067-push-amazon-sp-api-doc-surface-to-origin.md` — and act on it. Raised by `xrepo-queue.py` because the answer arrived with no build-order item naming a real row (XR-IN-1000843). | 🤖 | `OPEN` | 2026-09-06 | 2026-09-06 |
 
 ## Requests this repo has sent — XREPO OUTBOX
 
@@ -71,8 +73,8 @@ Another repo has filed work here. These are **buildable rows, not questions** �
 
 | Seq | Item | Status | Note |
 |---|---|---|---|
-| 1 | `XR-ANS-001` | QUEUED | queued by `xrepo-queue.py` 2026-09-02 — answer to `XR-OUT-001` arrived from AMZN API/Amazon_Ads_API; read `XREPO/answers/ANSWER-amzn-api-amazon-ads-api-XR-IN-1000013-amazon-ads-api-is-private-not-public-readme-16-s.md` and act on it |
-| 2 | `XR-ANS-417` | QUEUED | queued by `xrepo-queue.py` 2026-09-02 — answer to `XR-OUT-417` arrived from AMZN API/amzn-api-integration; read `XREPO/answers/ANSWER-amzn-api-amzn-api-integration-XR-IN-1000067-push-amazon-sp-api-doc-surface-to-origin.md` and act on it |
+| 1 | `OI-0015` | QUEUED | queued by `xrepo-queue.py` 2026-09-02 — answer to `XR-OUT-001` arrived from AMZN API/Amazon_Ads_API; read `XREPO/answers/ANSWER-amzn-api-amazon-ads-api-XR-IN-1000013-amazon-ads-api-is-private-not-public-readme-16-s.md` and act on it |
+| 2 | `OI-0018` | QUEUED | queued by `xrepo-queue.py` 2026-09-02 — answer to `XR-OUT-417` arrived from AMZN API/amzn-api-integration; read `XREPO/answers/ANSWER-amzn-api-amzn-api-integration-XR-IN-1000067-push-amazon-sp-api-doc-surface-to-origin.md` and act on it |
 | 3 | `PRJ-001` | QUEUED | adopted from `SPEC-spapi-archive-readable-and-guarded` on 2026-09-05 — he ticked Adopt on the page, which is the approval for this item; queued by `adopt-specs.py` directly into the live order (PRJ-040 T-03) |
 | 4 | `OI-0002` | QUEUED | queued by `order-triage.py` 2026-09-05 — 🤖, buildable, was in no build order |
 | 5 | `OI-0003` | QUEUED | queued by `order-triage.py` 2026-09-05 — 🤖, buildable, was in no build order |
