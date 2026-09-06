@@ -7,14 +7,14 @@
 **Page:** https://oil-web-production.up.railway.app/r/Amazon_SP_API
 **Installed:** 2026-08-21 (oil-install.py)
 **Last reconciled:** never — the first /wrap performs the first reconcile
-**Next IDs:** PRJ-001 · OI-0012 · XA-001
+**Next IDs:** PRJ-001 · OI-0013 · XA-001
 **Next XR-OUT ID:** 0419
 
 ## Portfolio
 
 | ID | Project | Status | WS | 👤 | 🤖 | 🔗 | ⚪ | Open total | Oldest open | Last touched |
 |----|---------|--------|----|----|----|----|----|-----------|-------------|--------------|
-| PRJ-000 | Unfiled | STANDING | W0 | 0 | 0 | 0 | 0 | 0 | 2026-08-21 | 2026-08-21 |
+| PRJ-000 | Unfiled | STANDING | W0 | 0 | 0 | 0 | 1 | 1 | 2026-08-21 | 2026-09-05 |
 | PRJ-001 | SPEC-spapi-archive-readable-and-guarded — the 422-PDF archiv | ACTIVE |  | 0 | 10 | 0 | 0 | 10 | 2026-09-05 | 2026-09-05 |
 
 **Reconciliation:** Σ project open totals = 1 · non-terminal rows in typed tables = 1 ✅
@@ -32,6 +32,7 @@ reason — nothing is silently lost.
 | Item | Wk | Description | Type | Status | Opened | Updated |
 |------|----|-------------|------|--------|--------|---------|
 | OI-0001 | W0 | ⚪ **All 10 build steps in `PLAN/specs/SPEC-spapi-archive-readable-and-guarded.md` are built.** `.claude/spapi-index/` holds a manifest row + text sidecar for all 422 PDFs; `docs/05-archive-index.md` and `docs/06-coverage-report.md` are generated (coverage's family-match window fixed to avoid Amazon's shared site-nav boilerplate false-positiving every family — see spec Items); the citation guard resolves 56 exact + 12 suffix + 2 glob, 0 dangling; `spapi_doc_guard.py`'s 13 unit tests and 10 named mutants are green (control GREEN, every mutant reddens exactly its predicted test); the hourly `com.thc.amzn-api-doc-citations` LaunchAgent is loaded and confirmed CLEAN end-to-end; `START-HERE.md`/`docs/01-04`/`README.md` describe this repo's actual (public) visibility. DoD block run verbatim from the spec: `bash /tmp/spapi-dod.sh > /tmp/spapi-dod.log 2>&1; echo "EXIT=$?" >> /tmp/spapi-dod.log` → **EXIT=0**. | ⚪ | `DONE` | 2026-08-21 | 2026-08-22 |
+| OI-0012 | W0 | 🤖 **Read the answer to `XR-OUT-418`** from .claude — `XREPO/answers/ANSWER-claude-XR-IN-1000843-xrepo-queue-py-mints-xr-ans-nnn-order-ids-that-n.md` — and act on it. Raised by `xrepo-queue.py` because the answer arrived with no build-order item naming a real row (XR-IN-1000843). | 🤖 | `OPEN` | 2026-09-05 | 2026-09-05 |
 
 ## Requests this repo has sent — XREPO OUTBOX
 
@@ -46,7 +47,7 @@ Work this repo has filed into ANOTHER repo's ledger. `SENT` means the instructio
 |----|----|-----|--------|-------------|--------|------|----------|
 | XR-OUT-001 | AMZN API/Amazon_Ads_API | Amazon_Ads_API is PRIVATE, not public — README:16 / START-HERE:26 are wrong, and this closes the UNVERIFIED visibility BLOCKER in your SPEC-doc-archive-truth | `DONE` | `XREPO/requests/REQUEST-amzn-api-amazon-sp-api-XR-IN-1000013-amazon-ads-api-is-private-not-public-readme-16-s.md` (in AMZN API/Amazon_Ads_API) | `XREPO/answers/ANSWER-amzn-api-amazon-ads-api-XR-IN-1000013-amazon-ads-api-is-private-not-public-readme-16-s.md` | 2026-08-21 | 2026-08-21 |
 | XR-OUT-417 | AMZN API/amzn-api-integration | Push Amazon_SP_API doc surface to origin | `DONE` | `XREPO/requests/REQUEST-amzn-api-amazon-sp-api-XR-IN-1000067-push-amazon-sp-api-doc-surface-to-origin.md` (in AMZN API/amzn-api-integration) | `XREPO/answers/ANSWER-amzn-api-amzn-api-integration-XR-IN-1000067-push-amazon-sp-api-doc-surface-to-origin.md` | 2026-08-22 | 2026-08-22 |
-| XR-OUT-418 | .claude | xrepo-queue.py mints XR-ANS-nnn order ids that name no row — 1,371 unreachable build-order items in 30 repos | `SENT` | `XREPO/requests/REQUEST-amzn-api-amazon-sp-api-XR-IN-1000843-xrepo-queue-py-mints-xr-ans-nnn-order-ids-that-n.md` (in .claude) | — | 2026-09-06 | — |
+| XR-OUT-418 | .claude | xrepo-queue.py mints XR-ANS-nnn order ids that name no row — 1,371 unreachable build-order items in 30 repos | `PARTIAL` | `XREPO/requests/REQUEST-amzn-api-amazon-sp-api-XR-IN-1000843-xrepo-queue-py-mints-xr-ans-nnn-order-ids-that-n.md` (in .claude) | `XREPO/answers/ANSWER-claude-XR-IN-1000843-xrepo-queue-py-mints-xr-ans-nnn-order-ids-that-n.md` | 2026-09-06 | 2026-09-06 |
 
 ## Incoming requests from other repos — XREPO INBOX
 
@@ -85,6 +86,7 @@ Another repo has filed work here. These are **buildable rows, not questions** �
 | 13 | `OI-0011` | QUEUED | queued by `order-triage.py` 2026-09-05 — 🤖, buildable, was in no build order |
 | 14 | `XR-IN-1000810` | QUEUED | queued by `xrepo-queue.py` 2026-09-05 — incoming from estatehub; the instruction file is the spec |
 | 15 | `XR-IN-1000833` | QUEUED | queued by `xrepo-queue.py` 2026-09-05 — incoming from estatehub; the instruction file is the spec |
+| 16 | `OI-0012` | QUEUED | queued by `xrepo-queue.py` 2026-09-05 — answer to `XR-OUT-418` arrived from .claude; read `XREPO/answers/ANSWER-claude-XR-IN-1000843-xrepo-queue-py-mints-xr-ans-nnn-order-ids-that-n.md` and act on it |
 ## Build order — COMPLETED (archive)
 
 Items that finished more than 24h ago, moved out of the live order by `order-archive.py` so it shows only what is still to do. Nothing is deleted.

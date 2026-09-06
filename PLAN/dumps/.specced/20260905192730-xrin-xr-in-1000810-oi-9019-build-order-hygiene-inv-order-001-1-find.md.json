@@ -1,0 +1,12 @@
+{
+  "dump": "20260905192730-xrin-xr-in-1000810-oi-9019-build-order-hygiene-inv-order-001-1-find.md",
+  "spec": "PLAN/specs/SPEC-build-order-phantom-xr-ans-items.md",
+  "specs": [
+    "PLAN/specs/SPEC-build-order-phantom-xr-ans-items.md",
+    "PLAN/specs/SPEC-xrepo-queue-mints-unreachable-order-ids.md"
+  ],
+  "rc": 0,
+  "filed_at": 1788655198.6046197,
+  "started_at": 1788657745.860287,
+  "finished_at": 1788658979.763533
+}
