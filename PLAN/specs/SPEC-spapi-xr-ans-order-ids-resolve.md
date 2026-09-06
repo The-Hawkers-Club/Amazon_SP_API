@@ -1,7 +1,7 @@
 # SPEC-spapi-xr-ans-order-ids-resolve — the two queued cross-repo ANSWERS get read and closed, so the build order stops naming ids that resolve to nothing
 
 **Source:** PLAN/dumps/20260905192730-xrin-xr-in-1000833-oi-9019-fix-1-inv-gov-inv-order-conformance-find.md
-**Status:** READY
+**Status:** ADOPTED — became PRJ-002 on 2026-09-06
 **As of:** 2026-09-05
 
 ## Goal
