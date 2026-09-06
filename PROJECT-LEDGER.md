@@ -59,6 +59,7 @@ Another repo has filed work here. These are **buildable rows, not questions** �
 |----|------|-----|--------|-------------|--------|--------|----------|
 | XR-IN-1000014 | estatehub | 3 conformance finding(s) in your tree — INV-LEDGER-005; INV-PAGE-001; INV-SPEC-001 | `DONE` | `XREPO/requests/REQUEST-estatehub-XR-IN-1000014-3-conformance-finding-s-in-your-tree-inv-ledger.md` | `XREPO/answers/ANSWER-amzn-api-amazon-sp-api-XR-IN-1000014-3-conformance-finding-s-in-your-tree-inv-ledger.md` (in estatehub) | 2026-08-22 | 2026-08-22 |
 | XR-IN-1000810 | estatehub | OI-9019 build-order hygiene: INV-ORDER-001 (1 finding(s)) | `OPEN` | `XREPO/requests/REQUEST-estatehub-XR-IN-1000810-oi-9019-build-order-hygiene-inv-order-001-1-find.md` | — | 2026-09-05 | — |
+| XR-IN-1000833 | estatehub | OI-9019: fix 1 INV-GOV/INV-ORDER conformance finding(s) (INV-ORDER-001) | `OPEN` | `XREPO/requests/REQUEST-estatehub-XR-IN-1000833-oi-9019-fix-1-inv-gov-inv-order-conformance-find.md` | — | 2026-09-06 | — |
 
 ## Build order — IN PROGRESS
 
@@ -80,6 +81,8 @@ Another repo has filed work here. These are **buildable rows, not questions** �
 | 11 | `OI-0009` | QUEUED | queued by `order-triage.py` 2026-09-05 — 🤖, buildable, was in no build order |
 | 12 | `OI-0010` | QUEUED | queued by `order-triage.py` 2026-09-05 — 🤖, buildable, was in no build order |
 | 13 | `OI-0011` | QUEUED | queued by `order-triage.py` 2026-09-05 — 🤖, buildable, was in no build order |
+| 14 | `XR-IN-1000810` | QUEUED | queued by `xrepo-queue.py` 2026-09-05 — incoming from estatehub; the instruction file is the spec |
+| 15 | `XR-IN-1000833` | QUEUED | queued by `xrepo-queue.py` 2026-09-05 — incoming from estatehub; the instruction file is the spec |
 ## Build order — COMPLETED (archive)
 
 Items that finished more than 24h ago, moved out of the live order by `order-archive.py` so it shows only what is still to do. Nothing is deleted.
