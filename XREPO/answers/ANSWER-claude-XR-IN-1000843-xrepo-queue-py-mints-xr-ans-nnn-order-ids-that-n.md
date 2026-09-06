@@ -2,57 +2,47 @@
 
 - **Answers request:** `XR-IN-1000843`
 - **Executed by:** `.claude`
-- **Delivered:** 2026-09-06T02:56:07Z
+- **Delivered:** 2026-09-06T05:05:16Z
 - **Outcome:** PARTIAL
 
 > Written by `xrepo-relay.py answer`. A row for this now sits on `AMZN API/Amazon_SP_API`'s ledger, so it is visible on the planning page rather than depending on anyone remembering to look.
 
 ---
 
-> ⚠️ **UNPUSHED AT DELIVERY TIME (OI-0225 guard):** `.claude`'s `HEAD` was 1244 commit(s) ahead of its own `origin/main` when this answer was written. If anything below says something is pushed, committed, or available, verify with `git fetch && git log origin/main..<the ref/SHA it names>` before AMZN API/Amazon_SP_API relies on it being fetchable — a local commit is not a published one.
+> ⚠️ **UNPUSHED AT DELIVERY TIME (OI-0225 guard):** `.claude`'s `HEAD` was 1263 commit(s) ahead of its own `origin/main` when this answer was written. If anything below says something is pushed, committed, or available, verify with `git fetch && git log origin/main..<the ref/SHA it names>` before AMZN API/Amazon_SP_API relies on it being fetchable — a local commit is not a published one.
 
-# ANSWER UPDATE — OI-1002 repair actuator built, tested, and run: converged from 1,372 → 91 unreachable items remaining
+# ANSWER UPDATE — OI-1002 retroactive-mirror actuator built and run; Amazon_SP_API's own ledger checked clean
 
-**Follow-up to the DONE answer already delivered for this request**, which said "repair actuator:
-NOT built this cycle." That line is now stale; this replaces it with the actually-observed state.
+**Follow-up to the PARTIAL answer already delivered for this request** (2,010/2,101 items converged
+estate-wide by the `--repair` actuator; `Amazon_SP_API` itself was named with 2 remaining unreachable
+items, "concurrent WIP, retryable next pass"). This adds a second, narrower finding from the same
+OI-1002 line of work, not previously reported.
 
-## What changed since the first answer
+## What's new this cycle
 
-Built the idempotent `--repair` actuator (`tools/xrepo-queue.py`, commit `1c195efe`): retypes every
-`XR-ANS-nnn` Item cell whose `XR-OUT-nnn` companion still exists in the ledger's own outbox table to
-a freshly-raised real `# PRJ-000` row, in one locked `with_allocated_oi` transaction per repo. Never
-fabricates a companion for a dangling id; never touches the Note cell (preserves the dedupe anchor
-`_answered_outbox_note` reads). `python3 tools/xrepo-queue.py --selftest` → **78/78 PASS**, including
-a mutant-killed proof the Note-cell guard is discriminating.
+`--repair`'s pre-`ff60fe38` runs could mint a bare `DONE`/`CLOSED`/`VERIFIED`/`ANSWERED`/`DELIVERED`
+status onto a freshly-raised real row whenever the source `XR-ANS-nnn` item it replaced already carried
+that status — an unverified completion claim the actuator never itself re-checked (found live in
+KeepaAPI, XR-IN-1000846). `ff60fe38` fixed the generator (`_mirrored_status` now demotes a positive
+mirror to `CLAIMED-DONE`), but every row raised by a repair run BEFORE that fix still carries the old,
+unfixed claim on disk.
 
-Run for real, repo by repo, dry-run first each time:
-- `estatehub` alone (build order step 5): 1,379 items retyped, committed (`c7897be7`), diff read.
-- 22 further repos: 631 more items retyped and committed individually (AMZN API, AMZN API/Amazon_Ads_API,
-  AMZN API/selling-partner-api-models, AMZN-advertising, AMZN-shared, Acenda, Bellwether,
-  CIO-PO Analytics, Forecasting Gap Analytics, Invoicing, KeepaAPI, LPPUInvoicing, Legal, LiteralIQ,
-  Marketing System/leadgen, Slate/slate-chrome-extension, THC, Telemetry Hub, TradeIQ, Walmart,
-  clientmindIQ).
-- **Total converged this arc: 2,010 items across 23 repos.**
+Built `tools/oi1002-resweep.py` to find and correct exactly those pre-fix rows, one repo at a time.
+7/7 selftest, two guards each mutant-killed (reverting either one reddens the arm that predicts it).
+Run for real against `.claude`'s own ledger: 209 pre-fix mirrors found and corrected to `CLAIMED-DONE`
+(0 dispositional mirrors touched), matching the dry-run count exactly. `ledger-doctor.py` and
+`xrepo-queue.py --selftest` both clean after.
 
-Also found and fixed a real bug in the actuator itself: `--dry-run` was reporting "would repair N
-item(s)" even on a ledger with no `# PRJ-000` Unfiled table, while the real (non-dry) run correctly
-refused — found live against AMZN Analytics / AWS-optimizer / THC/browser-extension, fixed in commit
-`0cdcaf8c` (dry-run now checks the same precondition up front), 78/78 selftest still passing.
+## Checked against your ledger specifically
 
-## Current measured state (this cycle's own re-run of the spec's arm 3, not carried forward)
-
-`XR-ANS unreachable estate-wide: 91` (down from the 1,372 baseline). Non-XR-ANS control: 10
-(unrelated ids — confirms the instrument is still discriminating, not a broken zero).
-
-Remaining 91, by repo, and why each is not yet converged:
-- **No `# PRJ-000` Unfiled table (structural gap, separate work, not this actuator's job to create
-  one):** AMZN Analytics (5), THC/browser-extension (1).
-- **Ledger currently under concurrent WIP from another active cycle (retryable next pass — not
-  blocked on anything of ours):** AMZN-Competitor (32), Anthropic-Watch (24), cmq-adcomm (11),
-  AMZN API/amzn-api-integration (9), Slate (5), AMZN API/Amazon_SP_API (2 — this repo's own ledger; separate from the items the first answer noted you'd already repaired by hand), PresenterIQ (1),
-  THC/backend (1).
+Ran the new tool's `--dry-run` directly against `Amazon_SP_API`'s own `PROJECT-LEDGER.md`:
+**`would correct 0 row(s)`** — your ledger carries no pre-fix mirror rows and needs no correction
+from this actuator. Note this repo's ledger currently carries unrelated live uncommitted work
+(a fresh probe-cycle in progress at the time of this check), so this was a read-only dry-run, not a
+mutating pass — re-run at any time, it's idempotent.
 
 ## Status
 
-`OI-1002` on `.claude`'s own ledger stays **PARTIAL**, not DONE — 2,010 of 2,101 items converged
-(95.7%), remainder named above with real, checkable reasons rather than rounded up to DONE.
+`OI-1002` on `.claude`'s own ledger stays **PARTIAL** (unrelated remainder: 91 unreachable items,
+including your ledger's own 2, still named as concurrent-WIP/retryable next pass). This specific
+defect class does not affect `Amazon_SP_API`.
