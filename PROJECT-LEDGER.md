@@ -170,7 +170,7 @@ python3 "$G" --selftest \
 && ! grep -q 'internal reference by The Hawker' README.md \
 && python3 -c "import os,sys; idx=open('docs/05-archive-index.md').read(); sys.exit(1 if [f for f in os.listdir('.') if f.endswith('.pdf') and f not in idx] else 0)"
 ```
-**DoD status:** DoD UNVERIFIABLE · not checked · EXIT=n/a · 2026-09-06T22:28:40Z · `sh set -u cd "/Users/peterbeke/Developer/VS Code/AMZN API/Amazon_SP_API" || exit 1 G="/Users/peterbeke/Developer/VS Code/AMZN API/.claude/checks/spapi_doc_guard.py" python3 "$G" --selftest`
+**DoD status:** DoD UNVERIFIABLE · not checked · EXIT=n/a · 2026-09-06T19:36:10Z · `sh set -u cd "/Users/peterbeke/Developer/VS Code/AMZN API/Amazon_SP_API" || exit 1 G="/Users/peterbeke/Developer/VS Code/AMZN API/.claude/checks/spapi_doc_guard.py" python3 "$G" --selftest`
 
 OBSERVED 2026-08-21: this exact block was written to `/tmp/spapi-dod.sh` and run —
 `bash /tmp/spapi-dod.sh > /tmp/spapi-dod.log 2>&1; echo "EXIT=$?" >> /tmp/spapi-dod.log` → **`EXIT=2`**
@@ -247,7 +247,7 @@ xq=importlib.util.module_from_spec(sp); sp.loader.exec_module(xq)
 sys.exit(0 if not xq.unqueued_answers(".") else 1)
 PY
 ```
-**DoD status:** DoD UNVERIFIABLE · not checked · EXIT=n/a · 2026-09-06T22:28:40Z · `sh set -u cd "/Users/peterbeke/Developer/VS Code/AMZN API/Amazon_SP_API" || exit 1 python3 ~/.claude/tools/estate-conformance.py --check --only INV-GOV,INV-ORDER --repo . > /tmp/spapi-inv.txt 2>&1 grep -q -- '-> 0 repaired, 0 open' /tmp/spapi-inv.txt || exit 1 python3 ~/.claude/tools/ledger-read.py --repo . --xrin 2>&1 | grep -qE 'XR-IN-1000810[[:space:]]+\[DONE\]' || exit 1 python3 ~/.claude/tools/ledger-read.py --repo . --xrin 2>&1 | grep -qE 'XR-IN-1000833[[:space:]]+\[DONE\]' || exit 1 python3 - <<'PY' || exit 1 import importlib.util, os, sys T=os.path.expanduser("~/.claude/tools"); sys.path.insert(0,T) sp=importlib.util.spec_from_file_location("_xq", os.path.join(T,"xrepo-queue.py")) xq=importlib.util.module_from_spec(sp); sp.loader.exec_module(xq) sys.exit(0 if not xq.unqueued_answers(".") else 1) PY`
+**DoD status:** DoD UNVERIFIABLE · not checked · EXIT=n/a · 2026-09-06T19:36:10Z · `sh set -u cd "/Users/peterbeke/Developer/VS Code/AMZN API/Amazon_SP_API" || exit 1 python3 ~/.claude/tools/estate-conformance.py --check --only INV-GOV,INV-ORDER --repo . > /tmp/spapi-inv.txt 2>&1 grep -q -- '-> 0 repaired, 0 open' /tmp/spapi-inv.txt || exit 1 python3 ~/.claude/tools/ledger-read.py --repo . --xrin 2>&1 | grep -qE 'XR-IN-1000810[[:space:]]+\[DONE\]' || exit 1 python3 ~/.claude/tools/ledger-read.py --repo . --xrin 2>&1 | grep -qE 'XR-IN-1000833[[:space:]]+\[DONE\]' || exit 1 python3 - <<'PY' || exit 1 import importlib.util, os, sys T=os.path.expanduser("~/.claude/tools"); sys.path.insert(0,T) sp=importlib.util.spec_from_file_location("_xq", os.path.join(T,"xrepo-queue.py")) xq=importlib.util.module_from_spec(sp); sp.loader.exec_module(xq) sys.exit(0 if not xq.unqueued_answers(".") else 1) PY`
 
 BOTH DIRECTIONS PROVEN THIS SESSION, not asserted:
 
