@@ -7,14 +7,14 @@
 **Page:** https://oil-web-production.up.railway.app/r/Amazon_SP_API
 **Installed:** 2026-08-21 (oil-install.py)
 **Last reconciled:** never — the first /wrap performs the first reconcile
-**Next IDs:** PRJ-001 · OI-0049 · XA-001
+**Next IDs:** PRJ-001 · OI-0052 · XA-001
 **Next XR-OUT ID:** 0419
 
 ## Portfolio
 
 | ID | Project | Status | WS | 👤 | 🤖 | 🔗 | ⚪ | Open total | Oldest open | Last touched |
 |----|---------|--------|----|----|----|----|----|-----------|-------------|--------------|
-| PRJ-000 | Unfiled | STANDING | W0 | 0 | 3 | 0 | 0 | 3 | 2026-08-21 | 2026-09-06 |
+| PRJ-000 | Unfiled | STANDING | W0 | 0 | 3 | 0 | 1 | 4 | 2026-08-21 | 2026-09-07 |
 | PRJ-001 | SPEC-spapi-archive-readable-and-guarded — the 422-PDF archiv | ACTIVE |  | 0 | 10 | 0 | 0 | 10 | 2026-09-05 | 2026-09-05 |
 | PRJ-002 | SPEC-spapi-xr-ans-order-ids-resolve — the two queued cross-r | ACTIVE |  | 0 | 10 | 0 | 0 | 10 | 2026-09-06 | 2026-09-06 |
 
@@ -36,6 +36,7 @@ reason — nothing is silently lost.
 | OI-0012 | W0 | 🤖 **Read the answer to `XR-OUT-418`** from .claude — `XREPO/answers/ANSWER-claude-XR-IN-1000843-xrepo-queue-py-mints-xr-ans-nnn-order-ids-that-n.md` — and act on it. Raised by `xrepo-queue.py` because the answer arrived with no build-order item naming a real row (XR-IN-1000843). | 🤖 | `OPEN` | 2026-09-05 | 2026-09-05 |
 | OI-0015 | W0 | 🤖 **Read the answer to `XR-OUT-001`** from AMZN API/Amazon_Ads_API — `XREPO/answers/ANSWER-amzn-api-amazon-ads-api-XR-IN-1000013-amazon-ads-api-is-private-not-public-readme-16-s.md` — and act on it. Raised by `xrepo-queue.py` because the answer arrived with no build-order item naming a real row (XR-IN-1000843). | 🤖 | `OPEN` | 2026-09-06 | 2026-09-06 |
 | OI-0018 | W0 | 🤖 **Read the answer to `XR-OUT-417`** from AMZN API/amzn-api-integration — `XREPO/answers/ANSWER-amzn-api-amzn-api-integration-XR-IN-1000067-push-amazon-sp-api-doc-surface-to-origin.md` — and act on it. Raised by `xrepo-queue.py` because the answer arrived with no build-order item naming a real row (XR-IN-1000843). | 🤖 | `OPEN` | 2026-09-06 | 2026-09-06 |
+| OI-0051 | W0 | ⚪ **6 open build task(s) are written down in `PLAN/specs/SPEC-build-order-phantom-xr-ans-items.md` and tracked by no row.** Verdict `ITEMS-ONLY` (0/6 ticked — a ticked box is a claim, not evidence). Backfilled by `INV-SPEC-001` so the work is VISIBLE; it is not scheduled and not adopted. Next action: `python3 ~/.claude/tools/spec-inventory.py --repo "AMZN API/Amazon_SP_API"` to read the open tasks, then file it into a project or adopt the spec on the open-ledger page. | ⚪ | `OPEN` | 2026-09-07 | 2026-09-07 |
 
 ## Requests this repo has sent — XREPO OUTBOX
 
@@ -170,7 +171,7 @@ python3 "$G" --selftest \
 && ! grep -q 'internal reference by The Hawker' README.md \
 && python3 -c "import os,sys; idx=open('docs/05-archive-index.md').read(); sys.exit(1 if [f for f in os.listdir('.') if f.endswith('.pdf') and f not in idx] else 0)"
 ```
-**DoD status:** DoD UNVERIFIABLE · not checked · EXIT=n/a · 2026-09-06T19:36:10Z · `sh set -u cd "/Users/peterbeke/Developer/VS Code/AMZN API/Amazon_SP_API" || exit 1 G="/Users/peterbeke/Developer/VS Code/AMZN API/.claude/checks/spapi_doc_guard.py" python3 "$G" --selftest`
+**DoD status:** DoD UNVERIFIABLE · not checked · EXIT=n/a · 2026-09-07T16:26:41Z · `sh set -u cd "/Users/peterbeke/Developer/VS Code/AMZN API/Amazon_SP_API" || exit 1 G="/Users/peterbeke/Developer/VS Code/AMZN API/.claude/checks/spapi_doc_guard.py" python3 "$G" --selftest`
 
 OBSERVED 2026-08-21: this exact block was written to `/tmp/spapi-dod.sh` and run —
 `bash /tmp/spapi-dod.sh > /tmp/spapi-dod.log 2>&1; echo "EXIT=$?" >> /tmp/spapi-dod.log` → **`EXIT=2`**
@@ -247,7 +248,7 @@ xq=importlib.util.module_from_spec(sp); sp.loader.exec_module(xq)
 sys.exit(0 if not xq.unqueued_answers(".") else 1)
 PY
 ```
-**DoD status:** DoD UNVERIFIABLE · not checked · EXIT=n/a · 2026-09-06T19:36:10Z · `sh set -u cd "/Users/peterbeke/Developer/VS Code/AMZN API/Amazon_SP_API" || exit 1 python3 ~/.claude/tools/estate-conformance.py --check --only INV-GOV,INV-ORDER --repo . > /tmp/spapi-inv.txt 2>&1 grep -q -- '-> 0 repaired, 0 open' /tmp/spapi-inv.txt || exit 1 python3 ~/.claude/tools/ledger-read.py --repo . --xrin 2>&1 | grep -qE 'XR-IN-1000810[[:space:]]+\[DONE\]' || exit 1 python3 ~/.claude/tools/ledger-read.py --repo . --xrin 2>&1 | grep -qE 'XR-IN-1000833[[:space:]]+\[DONE\]' || exit 1 python3 - <<'PY' || exit 1 import importlib.util, os, sys T=os.path.expanduser("~/.claude/tools"); sys.path.insert(0,T) sp=importlib.util.spec_from_file_location("_xq", os.path.join(T,"xrepo-queue.py")) xq=importlib.util.module_from_spec(sp); sp.loader.exec_module(xq) sys.exit(0 if not xq.unqueued_answers(".") else 1) PY`
+**DoD status:** DoD UNVERIFIABLE · not checked · EXIT=n/a · 2026-09-07T16:26:41Z · `sh set -u cd "/Users/peterbeke/Developer/VS Code/AMZN API/Amazon_SP_API" || exit 1 python3 ~/.claude/tools/estate-conformance.py --check --only INV-GOV,INV-ORDER --repo . > /tmp/spapi-inv.txt 2>&1 grep -q -- '-> 0 repaired, 0 open' /tmp/spapi-inv.txt || exit 1 python3 ~/.claude/tools/ledger-read.py --repo . --xrin 2>&1 | grep -qE 'XR-IN-1000810[[:space:]]+\[DONE\]' || exit 1 python3 ~/.claude/tools/ledger-read.py --repo . --xrin 2>&1 | grep -qE 'XR-IN-1000833[[:space:]]+\[DONE\]' || exit 1 python3 - <<'PY' || exit 1 import importlib.util, os, sys T=os.path.expanduser("~/.claude/tools"); sys.path.insert(0,T) sp=importlib.util.spec_from_file_location("_xq", os.path.join(T,"xrepo-queue.py")) xq=importlib.util.module_from_spec(sp); sp.loader.exec_module(xq) sys.exit(0 if not xq.unqueued_answers(".") else 1) PY`
 
 BOTH DIRECTIONS PROVEN THIS SESSION, not asserted:
 
