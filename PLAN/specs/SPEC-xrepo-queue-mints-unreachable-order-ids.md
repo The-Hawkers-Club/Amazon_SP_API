@@ -1,7 +1,7 @@
 # SPEC-xrepo-queue-mints-unreachable-order-ids — a queued answer becomes a real ledger row instead of a synthetic id that names nothing, and the 1,371 already written estate-wide are repaired
 
 **Source:** PLAN/dumps/20260905192730-xrin-xr-in-1000810-oi-9019-build-order-hygiene-inv-order-001-1-find.md
-**Status:** READY            <!-- DRAFT -> QUESTIONS-OUT -> READY -> ADOPTED -->
+**Status:** ADOPTED — became PRJ-004 on 2026-09-12
 **As of:** 2026-09-05
 **Owner repo:** `.claude` (registry row 1 of `~/.claude/state/repo-registry.tsv` → `/Users/peterbeke/.claude`), which owns `tools/xrepo-queue.py`. Filed there via `xrepo-relay.py request`; this file is the body.
 

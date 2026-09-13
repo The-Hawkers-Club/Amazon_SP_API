@@ -7,7 +7,7 @@
 **Page:** https://oil-web-production.up.railway.app/r/Amazon_SP_API
 **Installed:** 2026-08-21 (oil-install.py)
 **Last reconciled:** never — the first /wrap performs the first reconcile
-**Next IDs:** PRJ-001 · OI-0052 · XA-001
+**Next IDs:** PRJ-001 · OI-0100 · XA-001
 **Next XR-OUT ID:** 0419
 
 ## Portfolio
@@ -17,6 +17,8 @@
 | PRJ-000 | Unfiled | STANDING | W0 | 0 | 3 | 0 | 1 | 4 | 2026-08-21 | 2026-09-07 |
 | PRJ-001 | SPEC-spapi-archive-readable-and-guarded — the 422-PDF archiv | ACTIVE |  | 0 | 10 | 0 | 0 | 10 | 2026-09-05 | 2026-09-05 |
 | PRJ-002 | SPEC-spapi-xr-ans-order-ids-resolve — the two queued cross-r | ACTIVE |  | 0 | 10 | 0 | 0 | 10 | 2026-09-06 | 2026-09-06 |
+| PRJ-003 | SPEC-build-order-phantom-xr-ans-items — the two ids at the h | ACTIVE |  | 0 | 6 | 0 | 0 | 6 | 2026-09-12 | 2026-09-12 |
+| PRJ-004 | SPEC-xrepo-queue-mints-unreachable-order-ids — a queued answ | ACTIVE |  | 0 | 10 | 0 | 0 | 10 | 2026-09-12 | 2026-09-12 |
 
 **Reconciliation:** Σ project open totals = 1 · non-terminal rows in typed tables = 1 ✅
 
@@ -102,6 +104,8 @@ Another repo has filed work here. These are **buildable rows, not questions** �
 | 25 | `OI-0042` | QUEUED | queued by `order-triage.py` 2026-09-06 — 🤖, buildable, was in no build order |
 | 26 | `OI-0045` | QUEUED | queued by `order-triage.py` 2026-09-06 — 🤖, buildable, was in no build order |
 | 27 | `OI-0048` | QUEUED | queued by `order-triage.py` 2026-09-06 — 🤖, buildable, was in no build order |
+| 28 | `PRJ-003` | QUEUED | adopted from `SPEC-build-order-phantom-xr-ans-items` on 2026-09-12 — he ticked Adopt on the page, which is the approval for this item; queued by `adopt-specs.py` directly into the live order (PRJ-040 T-03) |
+| 29 | `PRJ-004` | QUEUED | adopted from `SPEC-xrepo-queue-mints-unreachable-order-ids` on 2026-09-12 — he ticked Adopt on the page, which is the approval for this item; queued by `adopt-specs.py` directly into the live order (PRJ-040 T-03) |
 ## Build order — COMPLETED (archive)
 
 Items that finished more than 24h ago, moved out of the live order by `order-archive.py` so it shows only what is still to do. Nothing is deleted.
@@ -171,7 +175,7 @@ python3 "$G" --selftest \
 && ! grep -q 'internal reference by The Hawker' README.md \
 && python3 -c "import os,sys; idx=open('docs/05-archive-index.md').read(); sys.exit(1 if [f for f in os.listdir('.') if f.endswith('.pdf') and f not in idx] else 0)"
 ```
-**DoD status:** DoD UNVERIFIABLE · not checked · EXIT=n/a · 2026-09-11T11:13:15Z · `sh set -u cd "/Users/peterbeke/Developer/VS Code/AMZN API/Amazon_SP_API" || exit 1 G="/Users/peterbeke/Developer/VS Code/AMZN API/.claude/checks/spapi_doc_guard.py" python3 "$G" --selftest`
+**DoD status:** DoD UNVERIFIABLE · not checked · EXIT=n/a · 2026-09-11T20:55:42Z · `sh set -u cd "/Users/peterbeke/Developer/VS Code/AMZN API/Amazon_SP_API" || exit 1 G="/Users/peterbeke/Developer/VS Code/AMZN API/.claude/checks/spapi_doc_guard.py" python3 "$G" --selftest`
 
 OBSERVED 2026-08-21: this exact block was written to `/tmp/spapi-dod.sh` and run —
 `bash /tmp/spapi-dod.sh > /tmp/spapi-dod.log 2>&1; echo "EXIT=$?" >> /tmp/spapi-dod.log` → **`EXIT=2`**
@@ -248,7 +252,7 @@ xq=importlib.util.module_from_spec(sp); sp.loader.exec_module(xq)
 sys.exit(0 if not xq.unqueued_answers(".") else 1)
 PY
 ```
-**DoD status:** DoD UNVERIFIABLE · not checked · EXIT=n/a · 2026-09-11T11:13:15Z · `sh set -u cd "/Users/peterbeke/Developer/VS Code/AMZN API/Amazon_SP_API" || exit 1 python3 ~/.claude/tools/estate-conformance.py --check --only INV-GOV,INV-ORDER --repo . > /tmp/spapi-inv.txt 2>&1 grep -q -- '-> 0 repaired, 0 open' /tmp/spapi-inv.txt || exit 1 python3 ~/.claude/tools/ledger-read.py --repo . --xrin 2>&1 | grep -qE 'XR-IN-1000810[[:space:]]+\[DONE\]' || exit 1 python3 ~/.claude/tools/ledger-read.py --repo . --xrin 2>&1 | grep -qE 'XR-IN-1000833[[:space:]]+\[DONE\]' || exit 1 python3 - <<'PY' || exit 1 import importlib.util, os, sys T=os.path.expanduser("~/.claude/tools"); sys.path.insert(0,T) sp=importlib.util.spec_from_file_location("_xq", os.path.join(T,"xrepo-queue.py")) xq=importlib.util.module_from_spec(sp); sp.loader.exec_module(xq) sys.exit(0 if not xq.unqueued_answers(".") else 1) PY`
+**DoD status:** DoD UNVERIFIABLE · not checked · EXIT=n/a · 2026-09-11T20:55:42Z · `sh set -u cd "/Users/peterbeke/Developer/VS Code/AMZN API/Amazon_SP_API" || exit 1 python3 ~/.claude/tools/estate-conformance.py --check --only INV-GOV,INV-ORDER --repo . > /tmp/spapi-inv.txt 2>&1 grep -q -- '-> 0 repaired, 0 open' /tmp/spapi-inv.txt || exit 1 python3 ~/.claude/tools/ledger-read.py --repo . --xrin 2>&1 | grep -qE 'XR-IN-1000810[[:space:]]+\[DONE\]' || exit 1 python3 ~/.claude/tools/ledger-read.py --repo . --xrin 2>&1 | grep -qE 'XR-IN-1000833[[:space:]]+\[DONE\]' || exit 1 python3 - <<'PY' || exit 1 import importlib.util, os, sys T=os.path.expanduser("~/.claude/tools"); sys.path.insert(0,T) sp=importlib.util.spec_from_file_location("_xq", os.path.join(T,"xrepo-queue.py")) xq=importlib.util.module_from_spec(sp); sp.loader.exec_module(xq) sys.exit(0 if not xq.unqueued_answers(".") else 1) PY`
 
 BOTH DIRECTIONS PROVEN THIS SESSION, not asserted:
 
@@ -261,3 +265,186 @@ BOTH DIRECTIONS PROVEN THIS SESSION, not asserted:
 
 The fourth arm (`unqueued_answers() == []`) is the one that matters most and it is not decorative: it
 is the arm that fails if the tempting-but-wrong fix is taken. See Conflicts.
+
+# PRJ-003 — SPEC-build-order-phantom-xr-ans-items — the two ids at the head of this repo's build order stop being unbuildable ghosts, because the answers they point at are read and closed with evidence
+**Goal:** The two items at seq 1 and seq 2 of this repo's live build order — `XR-ANS-001` and `XR-ANS-417` —
+name nothing. No row anywhere in `PROJECT-LEDGER.md` carries either id, so every cycle that walks the
+order resolves them to zero rows and emits *"no live rows yet. RAISE the rows this project needs"*
+for them, forever. They are the **head** of the order, which is the worst place for this to sit: the
+runner's first two decisions each cycle are decisions about phantoms, and `PRJ-001` — the project he
+actually queued — is stuck behind them.
+
+Both ids are follow-up items `xrepo-queue.py` wrote on 2026-09-02 so that two cross-repo **answers**
+would be read by someone. Neither ever was. Reading them is the work, and both close here:
+
+- **`XR-ANS-001`** → `XREPO/answers/ANSWER-amzn-api-amazon-ads-api-XR-IN-1000013-…md`. Amazon_Ads_API
+  re-ran the probe, corrected its own `README.md:16` and `START-HERE.md:26`, and closed the visibility
+  BLOCKER in its `SPEC-doc-archive-truth`. Its closing line is *"Nothing further is needed from
+  `Amazon_SP_API`."* Nothing to build; the row closes DONE with that as its evidence.
+- **`XR-ANS-417`** → `XREPO/answers/ANSWER-amzn-api-amzn-api-integration-XR-IN-1000067-…md`. This one
+  came back **REFUTED as routed**: `amzn-api-integration` proved it holds no push capability this repo
+  lacks, both trees being `push=no`. Its residual was *"nine commits, all local, `origin/main` has not
+  moved since 2026-07-05"*. **That premise is now overtaken.** The doc surface reached `origin/main`
+  by a route neither the request nor the refutation considered — a merged pull request — so the ask is
+  satisfied and the row closes MOOT with the current state cited.
+
+Once this is done the order describes work that exists, its head advances to `PRJ-001`, and the two
+estatehub instructions that reported the defect get their answers.
+**Definition of done:** `python3 ~/.claude/tools/estate-conformance.py --check --only INV-GOV,INV-ORDER --repo .`, run from
+this repo's canonical checkout, reports **0 open** across all 11 selected invariants (it reports
+1 open today); `overnight-run.schedule()` returns no entry with `no_rows=True` for this ledger and its
+plan head is `PRJ-001`; and both `XR-IN-1000810` and `XR-IN-1000833` read terminal on this repo's
+incoming cross-repo table with answers delivered into `estatehub`.
+**Status:** ACTIVE
+**Source:** adopted from `PLAN/specs/SPEC-build-order-phantom-xr-ans-items.md` on 2026-09-12 by `adopt-specs.py` (RULE-L23) — he ticked adopt on the page; the spec graded 6/6 both when it was offered and again here.
+| ID | Ws | Item — Residual Scope Only | Type | Status | Blocked By | Next Action | Where | Verified By | Raised | Last Checked |
+|---|---|---|---|---|---|---|---|---|---|---|
+| OI-0054 | — | Close build-order seq 1 (`XR-ANS-001`) as DONE at `PROJECT-LEDGER.md:71`, citing the Amazon_Ads_API answer's own closing line *"Nothing further is needed from `Amazon_SP_API`"* as evidence, and leaving the Note cell's `` `XR-OUT-001` `` untouched so the re-queue dedupe keeps holding. (adopted from `SPEC-build-order-phantom-xr-ans-items` on 2026-09-12, RULE-L23) | 🤖 | OPEN | — | build it, then the project DoD check must pass: set -u cd "/Users/peterbeke/Developer/VS Code/AMZN API/Amazon_SP_API" \|\| exit 1 python3 ~/.claude/tools/estate-conformance.py --check --only INV-GOV,INV-ORDER --repo . 2>&1 \\ \| grep -q '0 repaired, 0 open' \\ && python3 - <<'PY' import importlib.util, os, sys T = os.path.expanduser("~/.claude/tools") s = importlib.util.spec_from_file_location("_ov", os.path.join(T, "overnight-run.py")) ov = importl | `PLAN/specs/SPEC-build-order-phantom-xr-ans-items.md` | — | 2026-09-12 | 2026-09-12 |
+| OI-0057 | — | Close build-order seq 2 (`XR-ANS-417`) as MOOT at `PROJECT-LEDGER.md:72`, citing merged PR `2d54cad` and the post-fetch ahead=1 / behind=0 measurement that overtakes the refutation's nine-unpushed-commits premise, and leaving the Note cell's `` `XR-OUT-417` `` untouched for the same reason. (adopted from `SPEC-build-order-phantom-xr-ans-items` on 2026-09-12, RULE-L23) | 🤖 | OPEN | — | build it, then the project DoD check must pass: set -u cd "/Users/peterbeke/Developer/VS Code/AMZN API/Amazon_SP_API" \|\| exit 1 python3 ~/.claude/tools/estate-conformance.py --check --only INV-GOV,INV-ORDER --repo . 2>&1 \\ \| grep -q '0 repaired, 0 open' \\ && python3 - <<'PY' import importlib.util, os, sys T = os.path.expanduser("~/.claude/tools") s = importlib.util.spec_from_file_location("_ov", os.path.join(T, "overnight-run.py")) ov = importl | `PLAN/specs/SPEC-build-order-phantom-xr-ans-items.md` | — | 2026-09-12 | 2026-09-12 |
+| OI-0060 | — | Commit `PROJECT-LEDGER.md` by name and run the DoD check, capturing the exit code into the log rather than reading a wrapper's status. (adopted from `SPEC-build-order-phantom-xr-ans-items` on 2026-09-12, RULE-L23) | 🤖 | OPEN | — | build it, then the project DoD check must pass: set -u cd "/Users/peterbeke/Developer/VS Code/AMZN API/Amazon_SP_API" \|\| exit 1 python3 ~/.claude/tools/estate-conformance.py --check --only INV-GOV,INV-ORDER --repo . 2>&1 \\ \| grep -q '0 repaired, 0 open' \\ && python3 - <<'PY' import importlib.util, os, sys T = os.path.expanduser("~/.claude/tools") s = importlib.util.spec_from_file_location("_ov", os.path.join(T, "overnight-run.py")) ov = importl | `PLAN/specs/SPEC-build-order-phantom-xr-ans-items.md` | — | 2026-09-12 | 2026-09-12 |
+| OI-0063 | — | Record a dated premise update under Question 1 of `SPEC-spapi-archive-readable-and-guarded.md` noting that `docs/05-archive-index.md` is now published, without re-asking the question or altering its options. (adopted from `SPEC-build-order-phantom-xr-ans-items` on 2026-09-12, RULE-L23) | 🤖 | OPEN | — | build it, then the project DoD check must pass: set -u cd "/Users/peterbeke/Developer/VS Code/AMZN API/Amazon_SP_API" \|\| exit 1 python3 ~/.claude/tools/estate-conformance.py --check --only INV-GOV,INV-ORDER --repo . 2>&1 \\ \| grep -q '0 repaired, 0 open' \\ && python3 - <<'PY' import importlib.util, os, sys T = os.path.expanduser("~/.claude/tools") s = importlib.util.spec_from_file_location("_ov", os.path.join(T, "overnight-run.py")) ov = importl | `PLAN/specs/SPEC-build-order-phantom-xr-ans-items.md` | — | 2026-09-12 | 2026-09-12 |
+| OI-0066 | — | Answer `XR-IN-1000810` through `xrepo-relay.py`, naming the commit and the conformance output. (adopted from `SPEC-build-order-phantom-xr-ans-items` on 2026-09-12, RULE-L23) | 🤖 | OPEN | — | build it, then the project DoD check must pass: set -u cd "/Users/peterbeke/Developer/VS Code/AMZN API/Amazon_SP_API" \|\| exit 1 python3 ~/.claude/tools/estate-conformance.py --check --only INV-GOV,INV-ORDER --repo . 2>&1 \\ \| grep -q '0 repaired, 0 open' \\ && python3 - <<'PY' import importlib.util, os, sys T = os.path.expanduser("~/.claude/tools") s = importlib.util.spec_from_file_location("_ov", os.path.join(T, "overnight-run.py")) ov = importl | `PLAN/specs/SPEC-build-order-phantom-xr-ans-items.md` | — | 2026-09-12 | 2026-09-12 |
+| OI-0069 | — | Answer `XR-IN-1000833` as the duplicate of `XR-IN-1000810`, closed by the same commit, so both inbox rows go terminal. (adopted from `SPEC-build-order-phantom-xr-ans-items` on 2026-09-12, RULE-L23) | 🤖 | OPEN | — | build it, then the project DoD check must pass: set -u cd "/Users/peterbeke/Developer/VS Code/AMZN API/Amazon_SP_API" \|\| exit 1 python3 ~/.claude/tools/estate-conformance.py --check --only INV-GOV,INV-ORDER --repo . 2>&1 \\ \| grep -q '0 repaired, 0 open' \\ && python3 - <<'PY' import importlib.util, os, sys T = os.path.expanduser("~/.claude/tools") s = importlib.util.spec_from_file_location("_ov", os.path.join(T, "overnight-run.py")) ov = importl | `PLAN/specs/SPEC-build-order-phantom-xr-ans-items.md` | — | 2026-09-12 | 2026-09-12 |
+
+**DoD check:**
+```sh
+set -u
+cd "/Users/peterbeke/Developer/VS Code/AMZN API/Amazon_SP_API" || exit 1
+python3 ~/.claude/tools/estate-conformance.py --check --only INV-GOV,INV-ORDER --repo . 2>&1 \
+  | grep -q '0 repaired, 0 open' \
+&& python3 - <<'PY'
+import importlib.util, os, sys
+T = os.path.expanduser("~/.claude/tools")
+s = importlib.util.spec_from_file_location("_ov", os.path.join(T, "overnight-run.py"))
+ov = importlib.util.module_from_spec(s); sys.modules["_ov"] = ov; s.loader.exec_module(ov)
+s2 = importlib.util.spec_from_file_location("_xq", os.path.join(T, "xrepo-queue.py"))
+xq = importlib.util.module_from_spec(s2); sys.modules["_xq"] = xq; s2.loader.exec_module(xq)
+text = open("PROJECT-LEDGER.md", encoding="utf-8").read()
+plan = ov.schedule(text)
+dead = [p["project"] for p in plan
+        if p.get("no_rows") and not p.get("all_blocked") and not p.get("exhausted")]
+assert not dead, f"still unreachable: {dead}"
+assert plan and plan[0]["project"] == "PRJ-001", f"order head is {plan and plan[0]['project']}"
+for oid in ("XR-OUT-001", "XR-OUT-417"):
+    assert xq._outbox_id_referenced_in_any_order(text, oid), \
+        f"{oid} no longer named in an order section -> xrepo-queue will re-queue it"
+assert not xq.unqueued_answers("."), "an answered outbox row is unbooked -> it will be re-minted"
+print("OK")
+PY
+```
+
+Run it as `bash /tmp/spec-phantom-dod.sh > /tmp/spec-phantom-dod.log 2>&1; echo "EXIT=$?" >> /tmp/spec-phantom-dod.log`
+and read **the log**, not the wrapper's status.
+
+The arms are not redundant. The conformance run proves the *invariant* is quiet. The Python arm proves
+the three facts the invariant is blind to: that `schedule()` itself sees no unreachable item (the
+**runner's** predicate, not its grader); that the order head is now `PRJ-001` rather than merely
+"not a phantom"; and that the literal `` `XR-OUT-001` `` / `` `XR-OUT-417` `` strings survive in an
+order-section body. That last assertion is the regression guard for this spec's own failure mode:
+`xrepo-queue.py:461 _outbox_id_referenced_in_any_order` is the only thing stopping
+`unqueued_answers()` re-appending these two items under fresh ids on the next scheduled tick, and it
+matches on that Note-cell prose, not on the Item cell — this is `XR-IN-1000719`'s recorded defect,
+where a retype in AMZN-Consulting un-armed the dedupe and the same work was re-queued at seq 132.
+
+**OBSERVED 2026-09-05, this session — the fix was simulated before being specified.** Both status
+cells were changed on a temp copy of this ledger and every arm re-run against it:
+`estate-conformance --check --only INV-GOV,INV-ORDER` → `1 repos x 11 invariants -> 0 repaired, 0 open`;
+`schedule()` dead items → `[]`; plan head → `PRJ-001`; both `_outbox_id_referenced_in_any_order`
+probes → `True`. Baseline control against the unmodified live file in the same session → `1 open`
+(INV-ORDER-001, `XR-ANS-001, XR-ANS-417`), so the instrument discriminates and the green is a reading.
+`MOOT` was confirmed to be in `overnight-run.TERMINAL` rather than assumed to be.
+
+# PRJ-004 — SPEC-xrepo-queue-mints-unreachable-order-ids — a queued answer becomes a real ledger row instead of a synthetic id that names nothing, and the 1,371 already written estate-wide are repaired
+**Goal:** When an answer comes back to an ask this estate sent, `xrepo-queue.py` puts a follow-up item on the
+receiving repo's build order so somebody actually **reads** the answer — that mechanism is right and
+closed a real 2,528-row hole. But the id it writes into the Item cell, `XR-ANS-nnn`, is **synthetic:
+it defines no row anywhere**. So the item is on the order and resolves to nothing, and every cycle
+that walks that order emits *"no live rows yet. RAISE the rows this project needs"* for it — which
+is not a wasted cycle, it is a cycle **instructed to invent rows for work that already has an answer
+file on disk**.
+
+`answer_order_id`'s own docstring anticipates a cost and accepts it, and the accepted cost is
+understated. It reasons about `ledger-doctor.py`'s C3 check only, concludes *"this costs a cosmetic
+diagnostic line, never a repair — the acceptable side of the tradeoff"*, and does not consider
+`estate-conformance.py`'s `INV-ORDER-001`, which reads the same defect through
+`overnight-run.schedule()` — the **runner's own predicate**, not a diagnostic. The tradeoff is not
+cosmetic. It is the exact degenerate-plan failure `INV-ORDER-001` was written for in the first place.
+
+Once this is done, a queued answer names a real, open ledger row that says what to do with the
+answer; the estate's 1,371 existing synthetic items are repaired the same way; and `INV-ORDER-001`
+goes back to meaning what it was built to mean, instead of being a 1,371-row background hum that no
+repo can act on and that every repo now gets filed at it as hygiene work.
+**Definition of done:** `python3 ~/.claude/tools/estate-conformance.py --check --only INV-ORDER` across the registered estate
+reports **zero** `INV-ORDER-001` findings whose detail names an `XR-ANS-*` id (it names 1,371 today,
+across 30 repos), and a fresh `xrepo-queue.py` run against a fixture with an answered outbox row
+appends an item whose Item cell names a row that exists in the same ledger.
+**Status:** ACTIVE
+**Source:** adopted from `PLAN/specs/SPEC-xrepo-queue-mints-unreachable-order-ids.md` on 2026-09-12 by `adopt-specs.py` (RULE-L23) — he ticked adopt on the page; the spec graded 6/6 both when it was offered and again here.
+| ID | Ws | Item — Residual Scope Only | Type | Status | Blocked By | Next Action | Where | Verified By | Raised | Last Checked |
+|---|---|---|---|---|---|---|---|---|---|---|
+| OI-0072 | — | Measure the baseline from `.claude`'s own checkout — `XR-ANS` unreachable items estate-wide, plus the non-`XR-ANS` control — and record both numbers before changing anything. (adopted from `SPEC-xrepo-queue-mints-unreachable-order-ids` on 2026-09-12, RULE-L23) | 🤖 | OPEN | — | build it, then the project DoD check must pass: set -u python3 ~/.claude/tools/xrepo-queue.py --selftest \\ && python3 ~/.claude/tools/estate-conformance.py --selftest \\ && python3 - <<'PY' import importlib.util, os, sys T = os.path.expanduser("~/.claude/tools") s = importlib.util.spec_from_file_location("_ov", os.path.join(T, "overnight-run.py")) ov = importlib.util.module_from_spec(s); sys.modules["_ov"] = ov; s.loader.exec_module(ov) reg = {} | `PLAN/specs/SPEC-xrepo-queue-mints-unreachable-order-ids.md` | — | 2026-09-12 | 2026-09-12 |
+| OI-0075 | — | Change `xrepo-queue.py:714 queue()` so the answers population raises a real `OI-nnnn` row through `_ledger.with_allocated_oi` in the same locked transaction, and puts that id in the Item cell. (adopted from `SPEC-xrepo-queue-mints-unreachable-order-ids` on 2026-09-12, RULE-L23) | 🤖 | OPEN | — | build it, then the project DoD check must pass: set -u python3 ~/.claude/tools/xrepo-queue.py --selftest \\ && python3 ~/.claude/tools/estate-conformance.py --selftest \\ && python3 - <<'PY' import importlib.util, os, sys T = os.path.expanduser("~/.claude/tools") s = importlib.util.spec_from_file_location("_ov", os.path.join(T, "overnight-run.py")) ov = importlib.util.module_from_spec(s); sys.modules["_ov"] = ov; s.loader.exec_module(ov) reg = {} | `PLAN/specs/SPEC-xrepo-queue-mints-unreachable-order-ids.md` | — | 2026-09-12 | 2026-09-12 |
+| OI-0078 | — | Keep `answer_order_id` as the degradation path for a ledger whose Unfiled table cannot be located, so an unusual ledger falls back to today's behaviour instead of failing the queue. (adopted from `SPEC-xrepo-queue-mints-unreachable-order-ids` on 2026-09-12, RULE-L23) | 🤖 | OPEN | — | build it, then the project DoD check must pass: set -u python3 ~/.claude/tools/xrepo-queue.py --selftest \\ && python3 ~/.claude/tools/estate-conformance.py --selftest \\ && python3 - <<'PY' import importlib.util, os, sys T = os.path.expanduser("~/.claude/tools") s = importlib.util.spec_from_file_location("_ov", os.path.join(T, "overnight-run.py")) ov = importlib.util.module_from_spec(s); sys.modules["_ov"] = ov; s.loader.exec_module(ov) reg = {} | `PLAN/specs/SPEC-xrepo-queue-mints-unreachable-order-ids.md` | — | 2026-09-12 | 2026-09-12 |
+| OI-0081 | — | Add a selftest that reddens if `_answered_outbox_note` stops writing the literal `XR-OUT-nnn` id, since `_outbox_id_referenced_in_any_order` is the only remaining dedupe link. (adopted from `SPEC-xrepo-queue-mints-unreachable-order-ids` on 2026-09-12, RULE-L23) | 🤖 | OPEN | — | build it, then the project DoD check must pass: set -u python3 ~/.claude/tools/xrepo-queue.py --selftest \\ && python3 ~/.claude/tools/estate-conformance.py --selftest \\ && python3 - <<'PY' import importlib.util, os, sys T = os.path.expanduser("~/.claude/tools") s = importlib.util.spec_from_file_location("_ov", os.path.join(T, "overnight-run.py")) ov = importlib.util.module_from_spec(s); sys.modules["_ov"] = ov; s.loader.exec_module(ov) reg = {} | `PLAN/specs/SPEC-xrepo-queue-mints-unreachable-order-ids.md` | — | 2026-09-12 | 2026-09-12 |
+| OI-0084 | — | Update the existing `XR-ANS-100` / `XR-ANS-200` selftest fixtures at `xrepo-queue.py:1226-1318` to assert the new Item-cell shape, in the same commit as the behaviour change. (adopted from `SPEC-xrepo-queue-mints-unreachable-order-ids` on 2026-09-12, RULE-L23) | 🤖 | OPEN | — | build it, then the project DoD check must pass: set -u python3 ~/.claude/tools/xrepo-queue.py --selftest \\ && python3 ~/.claude/tools/estate-conformance.py --selftest \\ && python3 - <<'PY' import importlib.util, os, sys T = os.path.expanduser("~/.claude/tools") s = importlib.util.spec_from_file_location("_ov", os.path.join(T, "overnight-run.py")) ov = importlib.util.module_from_spec(s); sys.modules["_ov"] = ov; s.loader.exec_module(ov) reg = {} | `PLAN/specs/SPEC-xrepo-queue-mints-unreachable-order-ids.md` | — | 2026-09-12 | 2026-09-12 |
+| OI-0087 | — | Build the idempotent repair actuator that retypes existing `XR-ANS-*` items and raises their companion rows, one locked transaction per repo, escalating on any ledger it cannot parse rather than retrying it. (adopted from `SPEC-xrepo-queue-mints-unreachable-order-ids` on 2026-09-12, RULE-L23) | 🤖 | OPEN | — | build it, then the project DoD check must pass: set -u python3 ~/.claude/tools/xrepo-queue.py --selftest \\ && python3 ~/.claude/tools/estate-conformance.py --selftest \\ && python3 - <<'PY' import importlib.util, os, sys T = os.path.expanduser("~/.claude/tools") s = importlib.util.spec_from_file_location("_ov", os.path.join(T, "overnight-run.py")) ov = importlib.util.module_from_spec(s); sys.modules["_ov"] = ov; s.loader.exec_module(ov) reg = {} | `PLAN/specs/SPEC-xrepo-queue-mints-unreachable-order-ids.md` | — | 2026-09-12 | 2026-09-12 |
+| OI-0090 | — | Run the repair on `estatehub` first and alone (1,096 items), commit, and read the diff before proceeding. (adopted from `SPEC-xrepo-queue-mints-unreachable-order-ids` on 2026-09-12, RULE-L23) | 🤖 | OPEN | — | build it, then the project DoD check must pass: set -u python3 ~/.claude/tools/xrepo-queue.py --selftest \\ && python3 ~/.claude/tools/estate-conformance.py --selftest \\ && python3 - <<'PY' import importlib.util, os, sys T = os.path.expanduser("~/.claude/tools") s = importlib.util.spec_from_file_location("_ov", os.path.join(T, "overnight-run.py")) ov = importlib.util.module_from_spec(s); sys.modules["_ov"] = ov; s.loader.exec_module(ov) reg = {} | `PLAN/specs/SPEC-xrepo-queue-mints-unreachable-order-ids.md` | — | 2026-09-12 | 2026-09-12 |
+| OI-0093 | — | Run the repair across the remaining 29 affected repos, committing each by name. (adopted from `SPEC-xrepo-queue-mints-unreachable-order-ids` on 2026-09-12, RULE-L23) | 🤖 | OPEN | — | build it, then the project DoD check must pass: set -u python3 ~/.claude/tools/xrepo-queue.py --selftest \\ && python3 ~/.claude/tools/estate-conformance.py --selftest \\ && python3 - <<'PY' import importlib.util, os, sys T = os.path.expanduser("~/.claude/tools") s = importlib.util.spec_from_file_location("_ov", os.path.join(T, "overnight-run.py")) ov = importlib.util.module_from_spec(s); sys.modules["_ov"] = ov; s.loader.exec_module(ov) reg = {} | `PLAN/specs/SPEC-xrepo-queue-mints-unreachable-order-ids.md` | — | 2026-09-12 | 2026-09-12 |
+| OI-0096 | — | Run the three-arm DoD check, capturing the exit code into the log rather than reading a wrapper's status. (adopted from `SPEC-xrepo-queue-mints-unreachable-order-ids` on 2026-09-12, RULE-L23) | 🤖 | OPEN | — | build it, then the project DoD check must pass: set -u python3 ~/.claude/tools/xrepo-queue.py --selftest \\ && python3 ~/.claude/tools/estate-conformance.py --selftest \\ && python3 - <<'PY' import importlib.util, os, sys T = os.path.expanduser("~/.claude/tools") s = importlib.util.spec_from_file_location("_ov", os.path.join(T, "overnight-run.py")) ov = importlib.util.module_from_spec(s); sys.modules["_ov"] = ov; s.loader.exec_module(ov) reg = {} | `PLAN/specs/SPEC-xrepo-queue-mints-unreachable-order-ids.md` | — | 2026-09-12 | 2026-09-12 |
+| OI-0099 | — | Answer the originating cross-repo filing with the commits and the before/after counts. (adopted from `SPEC-xrepo-queue-mints-unreachable-order-ids` on 2026-09-12, RULE-L23) | 🤖 | OPEN | — | build it, then the project DoD check must pass: set -u python3 ~/.claude/tools/xrepo-queue.py --selftest \\ && python3 ~/.claude/tools/estate-conformance.py --selftest \\ && python3 - <<'PY' import importlib.util, os, sys T = os.path.expanduser("~/.claude/tools") s = importlib.util.spec_from_file_location("_ov", os.path.join(T, "overnight-run.py")) ov = importlib.util.module_from_spec(s); sys.modules["_ov"] = ov; s.loader.exec_module(ov) reg = {} | `PLAN/specs/SPEC-xrepo-queue-mints-unreachable-order-ids.md` | — | 2026-09-12 | 2026-09-12 |
+
+**DoD check:**
+```sh
+set -u
+python3 ~/.claude/tools/xrepo-queue.py --selftest \
+&& python3 ~/.claude/tools/estate-conformance.py --selftest \
+&& python3 - <<'PY'
+import importlib.util, os, sys
+T = os.path.expanduser("~/.claude/tools")
+s = importlib.util.spec_from_file_location("_ov", os.path.join(T, "overnight-run.py"))
+ov = importlib.util.module_from_spec(s); sys.modules["_ov"] = ov; s.loader.exec_module(ov)
+reg = {}
+for line in open(os.path.expanduser("~/.claude/state/repo-registry.tsv"), encoding="utf-8"):
+    if line.startswith("#") or not line.strip():
+        continue
+    p = line.rstrip("\n").split("\t")
+    if len(p) >= 2:
+        reg[p[0]] = os.path.expanduser(p[1])
+tot = 0
+for name, path in sorted(reg.items()):
+    led = os.path.join(path, "PROJECT-LEDGER.md")
+    if not os.path.exists(led):
+        continue
+    text = open(led, encoding="utf-8", errors="replace").read()
+    if "## Build order" not in text:
+        continue
+    try:
+        plan = ov.schedule(text)
+    except Exception:
+        continue
+    dead = [p["project"] for p in plan
+            if p.get("no_rows") and not p.get("all_blocked") and not p.get("exhausted")]
+    tot += sum(1 for d in dead if str(d).startswith("XR-ANS-"))
+print("XR-ANS unreachable estate-wide:", tot)
+assert tot == 0, f"still {tot}"
+PY
+```
+
+Run it as `bash /tmp/xrans-dod.sh > /tmp/xrans-dod.log 2>&1; echo "EXIT=$?" >> /tmp/xrans-dod.log`
+and read the log, not the notification's status.
+
+The three arms are not redundant. `xrepo-queue.py --selftest` proves the **generator** stops minting
+the shape (it already carries fixtures at `~/.claude/tools/xrepo-queue.py:1226-1318` that assert on
+`XR-ANS-100`/`XR-ANS-200` literals, so they are the arm that must be updated alongside the fix, not
+after it). `estate-conformance.py --selftest` proves `INV-ORDER-001` still **discriminates** — its
+existing self-test at `~/.claude/tools/estate-conformance.py:7575-7596` pins both directions,
+including a `CONTROL: INV-ORDER-001 went blind to a genuinely phantom order item`, so a fix that
+silences the invariant instead of the defect reddens there. The third arm measures the **world**, not
+the job table: it re-walks every registered ledger and counts what `schedule()` actually resolves.
+
+**Baseline, OBSERVED 2026-09-05 by running exactly that third arm:** `XR-ANS` unreachable estate-wide
+= **1,371**, in 30 of the 60 registered repos that carry a build order. Positive control that the
+sweep discriminates rather than matching everything: the same walk counts **8** unreachable items
+that are *not* `XR-ANS-*` (`OI-0688`, `OI-0136`, `OI-0196`, `PRJ-1016`, `PRJ-002` in `clientmindIQ`,
+`cmq-adcomm`, `CIO-PO Analytics`), and returns **0** for `.claude`'s own ledger — so a zero is a
+reading, not a broken instrument.

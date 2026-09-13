@@ -1,7 +1,7 @@
 # SPEC-build-order-phantom-xr-ans-items — the two ids at the head of this repo's build order stop being unbuildable ghosts, because the answers they point at are read and closed with evidence
 
 **Source:** PLAN/dumps/20260905192730-xrin-xr-in-1000810-oi-9019-build-order-hygiene-inv-order-001-1-find.md
-**Status:** READY            <!-- DRAFT -> QUESTIONS-OUT -> READY -> ADOPTED -->
+**Status:** ADOPTED — became PRJ-003 on 2026-09-12
 **As of:** 2026-09-05
 
 ## Goal
